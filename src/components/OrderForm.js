@@ -18,7 +18,7 @@ export default function OrderForm({ orders, setOrders }) {
         // ========================================
         // TODO: Reset the coffeeName back to empty string after adding order
         // Hint: Use setCoffeeName('') to clear the input field
-
+        setCoffeeName('');
         // ========================================
         // 🎯 EXERCISE useState 2: Update Order Array
         // ========================================
@@ -26,6 +26,8 @@ export default function OrderForm({ orders, setOrders }) {
         // Hint: Use the spread operator to create a new array: [...orders, coffeeName]
         // Hint: Call setOrders with the new array
         // Hint: Add a console.log to see when an order is added
+        setOrders ([...orders,coffeeName]);
+        console.log(`Added Orders: ${coffeeName}`);
     };
 
     return (
@@ -51,6 +53,7 @@ export default function OrderForm({ orders, setOrders }) {
                 <button
                     type="submit"
                     className="w-full bg-[#8B7355] text-white px-4 py-2 rounded hover:bg-[#6D5A43] transition-colors font-medium"
+                    value={coffeeName}
                 >
                     ☕ Add Order
                 </button>
